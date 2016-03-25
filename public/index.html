@@ -26,7 +26,7 @@
   </div>
   <div ng-repeat="song in songs | orderBy:['-genre','-upvotes']">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(song)"></span>
-    {{song.title}} {{song.album}} {{song.artist}} {{song.genre}} <img src={{song.imageURL}} height="20px"> - upvotes: {{song.upvotes}}
+    {{song.title}} {{song.album}} {{song.artist}} {{song.genre}} <img src={{song.imageURL}} height="40px"> - upvotes: {{song.upvotes}}
   </div>
 </div>
 </div>
