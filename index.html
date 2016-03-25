@@ -14,15 +14,19 @@
 </div>
 
   <form ng-submit="addSong()" style = "margin-top30px;">
-    <input type="text" ng-model="formContent"></input>
-    <button type="submit">Add Comment</button>
+    <input type="text" ng-model="formTitle"></input>
+    <input type="text" ng-model="formAlbum"></input>
+    <input type="text" ng-model="formArtist"></input>
+    <input type="text" ng-model="formGenre"></input>
+    <input type="text" ng-model="formURL"></input>
+    <button type="submit">Add Song</button>
   </form>
   <div>
     {{test}}
   </div>
-  <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+  <div ng-repeat="song in songs | orderBy:['genre','upvotes']">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
-    {{comment.title}} - upvotes: {{comment.upvotes}}
+    {{song.title}} - upvotes: {{song.upvotes}}
   </div>
 </div>
 </div>
