@@ -35,8 +35,15 @@ angular.module('music', [])
         $scope.formGenre = '';
         $scope.formURL = '';
       };
+      $scope.upvote = function(song) {
+        return $http.put('/songs/' + song._id + '/upvote')
+          .success(function(data) {
+            console.log("upvote worked");
+            song.upvotes += 1;
+          });
+      };
       $scope.incrementUpvotes = function(song) {
-        song.upvotes += 1;
+        $scope.upvote(comment);
       };
       $scope.getAll = function() {
         return $http.get('/songs').success(function(data) {
@@ -44,4 +51,6 @@ angular.module('music', [])
         });
       };
       $scope.getAll();
-  }]);
+      
+    }
+  ]);
