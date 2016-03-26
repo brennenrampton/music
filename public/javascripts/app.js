@@ -43,7 +43,7 @@ angular.module('music', [])
           });
       };
       $scope.incrementUpvotes = function(song) {
-        $scope.upvote(comment);
+        $scope.upvote(song);
       };
       $scope.getAll = function() {
         return $http.get('/songs').success(function(data) {
