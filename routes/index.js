@@ -38,7 +38,7 @@ router.get('/songs/:song', function(req, res) {
 });
 
 router.put('/songs/:song/upvote', function(req, res, next) {
-	req.song.upvote(function(err, comment){
+	req.song.upvote(function(err, song){
 		if(err) { return next(err); }
 		res.json(song);
 	});
