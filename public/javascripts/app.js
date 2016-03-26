@@ -11,8 +11,15 @@ angular.module('music', [])
         imageURL: 'https://upload.wikimedia.org/wikipedia/en/c/c6/Sggreatesthits.jpg',
         upvotes: 7
       }];
+      $scope.create = function(song) {
+        return $http.post('/songs', song).success(function(data) {
+          $scope.songs.push(data);
+        });
+      };
       $scope.addSong = function() {
-        if($scope.formContent === '') { return; }
+        if ($scope.formContent === '') {
+          return;
+        }
         $scope.create({
           title: $scope.formTitle,
           album: $scope.formAlbum,
@@ -35,10 +42,4 @@ angular.module('music', [])
           angular.copy(data, $scope.songs);
         });
       };
-      $scope.create = function(song) {
-        return $http.post('/songs', song).success(function(data) {
-          $scope.songs.push(data);
-        });
-      };
-    };
   }]);
