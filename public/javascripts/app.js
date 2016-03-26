@@ -14,6 +14,7 @@ angular.module('music', [])
       $scope.create = function(song) {
         return $http.post('/songs', song).success(function(data) {
           $scope.songs.push(data);
+          console.log(data);
         });
       };
       $scope.addSong = function() {
