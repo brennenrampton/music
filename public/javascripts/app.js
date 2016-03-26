@@ -43,4 +43,5 @@ angular.module('music', [])
           angular.copy(data, $scope.songs);
         });
       };
+      $scope.getAll();
   }]);
