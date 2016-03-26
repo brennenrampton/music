@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.jumbotron {
+	background-color: rgb(51, 204, 255);
+	text-align: center;
+}
